@@ -18,6 +18,6 @@ class ChatRoom(ChatMediator):
 
     def send_message(self, message, sender):
         for user in self.users:
-            # O mediador garante que quem enviou não receba a própria mensagem
+           
             if user != sender:
                 user.receive(message)
