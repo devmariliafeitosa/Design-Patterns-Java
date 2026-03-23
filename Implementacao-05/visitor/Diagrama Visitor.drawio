@@ -1,0 +1,69 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.4">
+  <diagram name="Visitor Pattern" id="oDVOqfc5ILjkzDz086vY">
+    <mxGraphModel dx="64278" dy="77931" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="&lt;&lt;interface&gt;&gt;&#xa;Visitor&#xa;------------------&#xa;+ visitar_alimento(a: Alimento)&#xa;+ visitar_eletronico(e: Eletronico)&#xa;+ visitar_bebida_alcoolica(b: BebidaAlcoolica)" vertex="1">
+          <mxGeometry height="120" width="260" x="400" y="-40" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;" value="CalculadoraImpostoVisitor&#xa;------------------&#xa;- total_impostos: float&#xa;+ visitar_alimento()&#xa;+ visitar_eletronico()&#xa;+ visitar_bebida_alcoolica()" vertex="1">
+          <mxGeometry height="140" width="260" x="400" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-14" edge="1" parent="1" source="Ps4y3Am_9GFFTQXksqYl-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Ps4y3Am_9GFFTQXksqYl-2" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="320" />
+              <mxPoint x="530" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;" value="&lt;&lt;abstract&gt;&gt;&#xa;Produto&#xa;------------------&#xa;- nome: str&#xa;- preco: float&#xa;+ aceitar(visitor: Visitor)" vertex="1">
+          <mxGeometry height="120" width="260" x="400" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" value="Alimento&#xa;+ aceitar(visitor)" vertex="1">
+          <mxGeometry height="80" width="180" x="190" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;" value="Eletronico&#xa;+ aceitar(visitor)" vertex="1">
+          <mxGeometry height="80" width="180" x="440" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;" value="BebidaAlcoolica&#xa;+ aceitar(visitor)" vertex="1">
+          <mxGeometry height="80" width="180" x="690" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-7" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;" value="CarrinhoDeCompras&#xa;------------------&#xa;- itens: List&lt;Produto&gt;&#xa;+ adicionar_item(produto)&#xa;+ calcular_tributacao()" vertex="1">
+          <mxGeometry height="120" width="260" x="400" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-8" edge="1" parent="1" source="Ps4y3Am_9GFFTQXksqYl-2" style="endArrow=block;endFill=0;" target="Ps4y3Am_9GFFTQXksqYl-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-9" edge="1" parent="1" source="Ps4y3Am_9GFFTQXksqYl-4" style="endArrow=block;endFill=0;" target="Ps4y3Am_9GFFTQXksqYl-3" />
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-10" edge="1" parent="1" source="Ps4y3Am_9GFFTQXksqYl-5" style="endArrow=block;endFill=0;" target="Ps4y3Am_9GFFTQXksqYl-3" />
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-11" edge="1" parent="1" source="Ps4y3Am_9GFFTQXksqYl-6" style="endArrow=block;endFill=0;" target="Ps4y3Am_9GFFTQXksqYl-3" />
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-12" edge="1" parent="1" source="Ps4y3Am_9GFFTQXksqYl-7" style="endArrow=diamond;" target="Ps4y3Am_9GFFTQXksqYl-3" />
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-15" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;fillColor=none;routingCenterX=-0.5;" value="" vertex="1">
+          <mxGeometry height="30" width="510" x="280" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-17" parent="1" style="html=1;whiteSpace=wrap;aspect=fixed;shape=isoRectangle;" value="" vertex="1">
+          <mxGeometry height="15" width="25.01" x="660" y="712.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-18" parent="1" style="shape=partialRectangle;whiteSpace=wrap;html=1;bottom=1;right=1;left=1;top=0;fillColor=none;routingCenterX=-0.5;direction=west;" value="" vertex="1">
+          <mxGeometry height="30" width="510" x="280" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-19" parent="1" style="line;strokeWidth=2;direction=south;html=1;" value="" vertex="1">
+          <mxGeometry height="80" width="10" x="525" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-20" edge="1" parent="1" source="Ps4y3Am_9GFFTQXksqYl-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="Ps4y3Am_9GFFTQXksqYl-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="460" />
+              <mxPoint x="530" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ps4y3Am_9GFFTQXksqYl-21" parent="1" style="line;strokeWidth=2;direction=south;html=1;" value="" vertex="1">
+          <mxGeometry height="80" width="10" x="525" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
